@@ -33,6 +33,7 @@ typedef enum
 	BOOL _isScrolling;
 	BOOL _isThumbViewShowing;
     BOOL _isShowToolbar;
+    BOOL _isChangeStatusBar;
 	
 	UIStatusBarStyle _prevStatusStyle;
 	CGFloat _prevNextButtonSize;
@@ -69,6 +70,7 @@ typedef enum
 - (void)reloadGallery;
 - (FGalleryPhoto*)currentPhoto;
 - (void)setToolbarShow:(BOOL)status;
+- (void)setChangeStatusBar:(BOOL)status;
 
 @property NSInteger currentIndex;
 @property NSInteger startingIndex;

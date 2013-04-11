@@ -136,6 +136,7 @@
 		networkGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
         [networkGallery setUseThumbnailView:NO];
         [networkGallery setToolbarShow:NO];
+        [networkGallery setChangeStatusBar:NO];
         [self.navigationController pushViewController:networkGallery animated:YES];
         [networkGallery release];
     }

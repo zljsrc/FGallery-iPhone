@@ -92,6 +92,7 @@
 		_prevStatusStyle					= [[UIApplication sharedApplication] statusBarStyle];
         _hideTitle                          = NO;
         _isShowToolbar                      = NO;
+        _isChangeStatusBar                  = YES;
 		
 		// create storage objects
 		_currentIndex						= 0;
@@ -267,6 +268,12 @@
 }
 
 
+- (void)setChangeStatusBar:(BOOL)status
+{
+    _isChangeStatusBar = status;
+}
+
+
 - (void)viewDidUnload {
     
     [self destroyViews];
@@ -361,7 +368,11 @@
 	[self layoutViews];
 	
 	// update status bar to be see-through
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+    if (_isChangeStatusBar) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+    } else {
+        [[UIApplication sharedApplication] setStatusBarStyle:_prevStatusStyle animated:animated];
+    }
 	
 	// init with next on first run.
 	if( _currentIndex == -1 ) [self next];
