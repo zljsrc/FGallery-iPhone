@@ -24,7 +24,7 @@
     localImages = [[NSArray alloc] initWithObjects: @"lava.jpeg", @"hawaii.jpeg", @"audi.jpg",nil];
     
     networkCaptions = [[NSArray alloc] initWithObjects:@"Happy New Year!",@"Frosty Web",nil];
-    networkImages = [[NSArray alloc] initWithObjects:@"http://farm6.static.flickr.com/5042/5323996646_9c11e1b2f6_b.jpg", @"http://farm6.static.flickr.com/5007/5311573633_3cae940638.jpg",nil];
+    networkImages = [[NSArray alloc] initWithObjects:@"http://pic02.babytreeimg.com/foto3/thumbs/2013/0409/58/0/3f40b4942c9c6b5aeb5cd8_mb.jpg?1365522788", @"http://pic02.babytreeimg.com/foto3/thumbs/2013/0409/23/7/3f40b49434cc6b5af634e0_mb.jpg?1365522791",nil];
 }
 
 #pragma mark - Table view data source
@@ -98,7 +98,7 @@
         caption = [localCaptions objectAtIndex:index];
     }
     else if( gallery == networkGallery ) {
-        caption = [networkCaptions objectAtIndex:index];
+        caption = nil;//[networkCaptions objectAtIndex:index];
     }
 	return caption;
 }
@@ -134,6 +134,7 @@
 	}
     else if( indexPath.row == 1 ) {
 		networkGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
+        [networkGallery setUseThumbnailView:NO];
         [self.navigationController pushViewController:networkGallery animated:YES];
         [networkGallery release];        
     }

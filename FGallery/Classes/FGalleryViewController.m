@@ -147,6 +147,15 @@
 {
 	if((self = [self initWithNibName:nil bundle:nil])) {
 		
+        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backButton setFrame:CGRectMake(0, 0, 44, 32)];
+        [backButton setImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
+        [backButton setImage:[UIImage imageNamed:@"backButtonPressed"] forState:UIControlStateHighlighted];
+        [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        [self.navigationItem setLeftBarButtonItem:backBarButton];
+        [backBarButton release];
+        
 		_photoSource = photoSrc;
 	}
 	return self;
@@ -157,9 +166,25 @@
 {
 	if((self = [self initWithPhotoSource:photoSrc])) {
 		
+        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backButton setFrame:CGRectMake(0, 0, 44, 32)];
+        [backButton setImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
+        [backButton setImage:[UIImage imageNamed:@"backButtonPressed"] forState:UIControlStateHighlighted];
+        [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        [self.navigationItem setLeftBarButtonItem:backBarButton];
+        [backBarButton release];
+        
 		[_barItems addObjectsFromArray:items];
 	}
 	return self;
+}
+
+#pragma mark - IBAction Event Handler Mehthod
+
+- (IBAction)backAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

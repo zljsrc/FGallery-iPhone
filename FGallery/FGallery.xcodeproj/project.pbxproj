@@ -15,6 +15,9 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		658BDADE17168C8500DE7431 /* navigationBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BDADD17168C8500DE7431 /* navigationBg@2x.png */; };
+		658BDAE117168F0B00DE7431 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BDADF17168F0B00DE7431 /* backButton@2x.png */; };
+		658BDAE217168F0B00DE7431 /* backButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BDAE017168F0B00DE7431 /* backButtonPressed@2x.png */; };
 		775D12D712D68D7200872F74 /* photo-gallery-trashcan.png in Resources */ = {isa = PBXBuildFile; fileRef = 775D12D312D68D7200872F74 /* photo-gallery-trashcan.png */; };
 		775D12D812D68D7200872F74 /* photo-gallery-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 775D12D412D68D7200872F74 /* photo-gallery-right.png */; };
 		775D12D912D68D7200872F74 /* photo-gallery-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 775D12D512D68D7200872F74 /* photo-gallery-left.png */; };
@@ -41,6 +44,9 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		658BDADD17168C8500DE7431 /* navigationBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBg@2x.png"; sourceTree = "<group>"; };
+		658BDADF17168F0B00DE7431 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
+		658BDAE017168F0B00DE7431 /* backButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButtonPressed@2x.png"; sourceTree = "<group>"; };
 		775D12D312D68D7200872F74 /* photo-gallery-trashcan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-trashcan.png"; sourceTree = "<group>"; };
 		775D12D412D68D7200872F74 /* photo-gallery-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-right.png"; sourceTree = "<group>"; };
 		775D12D512D68D7200872F74 /* photo-gallery-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery-left.png"; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				658BDADF17168F0B00DE7431 /* backButton@2x.png */,
+				658BDAE017168F0B00DE7431 /* backButtonPressed@2x.png */,
+				658BDADD17168C8500DE7431 /* navigationBg@2x.png */,
 				77FCB8BF12D7938900AAAFF3 /* Gallery Images */,
 				775D12D312D68D7200872F74 /* photo-gallery-trashcan.png */,
 				775D12D412D68D7200872F74 /* photo-gallery-right.png */,
@@ -225,6 +234,9 @@
 				77FCB8BD12D7936A00AAAFF3 /* audi.jpg in Resources */,
 				77FCB8C912D793E100AAAFF3 /* hawaii.jpeg in Resources */,
 				77FCB8D012D794C000AAAFF3 /* lava.jpeg in Resources */,
+				658BDADE17168C8500DE7431 /* navigationBg@2x.png in Resources */,
+				658BDAE117168F0B00DE7431 /* backButton@2x.png in Resources */,
+				658BDAE217168F0B00DE7431 /* backButtonPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dong Wang (HA4FSGGCZH)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -259,6 +272,7 @@
 				INFOPLIST_FILE = "FGallery-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = FGallery;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3C2FC7D-8A8A-426E-B530-4744553ACE99";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

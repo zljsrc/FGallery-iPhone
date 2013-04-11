@@ -21,6 +21,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0) {
+        [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
+    }
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 5.0) {
+        CALayer *navLayer = navigationController.navigationBar.layer;
+        navLayer.masksToBounds = NO;
+        navLayer.shadowColor = [UIColor blackColor].CGColor;
+        navLayer.shadowOffset = CGSizeMake(0.0, 1.0);
+        navLayer.shadowOpacity = 0.35f;
+        navLayer.shouldRasterize = YES;
+    }
     // Override point for customization after application launch.
     
     // Add the navigation controller's view to the window and display.
