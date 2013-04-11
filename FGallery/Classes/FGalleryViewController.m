@@ -70,7 +70,6 @@
 @synthesize photoSource = _photoSource;
 @synthesize currentIndex = _currentIndex;
 @synthesize thumbsView = _thumbsView;
-@synthesize toolBar = _toolbar;
 @synthesize useThumbnailView = _useThumbnailView;
 @synthesize startingIndex = _startingIndex;
 @synthesize beginsInThumbnailView = _beginsInThumbnailView;
@@ -92,6 +91,7 @@
         _useThumbnailView                   = YES;
 		_prevStatusStyle					= [[UIApplication sharedApplication] statusBarStyle];
         _hideTitle                          = NO;
+        _isShowToolbar                      = NO;
 		
 		// create storage objects
 		_currentIndex						= 0;
@@ -166,15 +166,6 @@
 {
 	if((self = [self initWithPhotoSource:photoSrc])) {
 		
-        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setFrame:CGRectMake(0, 0, 44, 32)];
-        [backButton setImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
-        [backButton setImage:[UIImage imageNamed:@"backButtonPressed"] forState:UIControlStateHighlighted];
-        [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-        [self.navigationItem setLeftBarButtonItem:backBarButton];
-        [backBarButton release];
-        
 		[_barItems addObjectsFromArray:items];
 	}
 	return self;
@@ -242,7 +233,9 @@
 	[_container addSubview:_thumbsView];
 	
 	[_innerContainer addSubview:_scroller];
-	[_innerContainer addSubview:_toolbar];
+    if (_isShowToolbar) {
+        [_innerContainer addSubview:_toolbar];
+    }
 	
 	[_toolbar addSubview:_captionContainer];
 	[_captionContainer addSubview:_caption];
@@ -263,6 +256,13 @@
 	[_toolbar setItems:_barItems animated:NO];
     
     // build stuff
+    [self reloadGallery];
+}
+
+
+- (void)setToolbarShow:(BOOL)status
+{
+    _isShowToolbar = status;
     [self reloadGallery];
 }
 

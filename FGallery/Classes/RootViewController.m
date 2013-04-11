@@ -135,8 +135,9 @@
     else if( indexPath.row == 1 ) {
 		networkGallery = [[FGalleryViewController alloc] initWithPhotoSource:self];
         [networkGallery setUseThumbnailView:NO];
+        [networkGallery setToolbarShow:NO];
         [self.navigationController pushViewController:networkGallery animated:YES];
-        [networkGallery release];        
+        [networkGallery release];
     }
 	else if( indexPath.row == 2 ) {
 		UIImage *trashIcon = [UIImage imageNamed:@"photo-gallery-trashcan.png"];
